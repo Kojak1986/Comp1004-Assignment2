@@ -74,7 +74,7 @@
             this.ExteriorFinishGroupBox.Controls.Add(this.CustomRadioButton);
             this.ExteriorFinishGroupBox.Controls.Add(this.MatteRadioButton);
             this.ExteriorFinishGroupBox.Controls.Add(this.StandardRadioButton);
-            this.ExteriorFinishGroupBox.Location = new System.Drawing.Point(365, 234);
+            this.ExteriorFinishGroupBox.Location = new System.Drawing.Point(359, 234);
             this.ExteriorFinishGroupBox.Name = "ExteriorFinishGroupBox";
             this.ExteriorFinishGroupBox.Size = new System.Drawing.Size(190, 145);
             this.ExteriorFinishGroupBox.TabIndex = 1;
@@ -226,7 +226,7 @@
             // StandardRadioButton
             // 
             this.StandardRadioButton.AutoSize = true;
-            this.StandardRadioButton.Location = new System.Drawing.Point(12, 37);
+            this.StandardRadioButton.Location = new System.Drawing.Point(6, 39);
             this.StandardRadioButton.Name = "StandardRadioButton";
             this.StandardRadioButton.Size = new System.Drawing.Size(95, 25);
             this.StandardRadioButton.TabIndex = 0;
@@ -237,7 +237,7 @@
             // MatteRadioButton
             // 
             this.MatteRadioButton.AutoSize = true;
-            this.MatteRadioButton.Location = new System.Drawing.Point(12, 70);
+            this.MatteRadioButton.Location = new System.Drawing.Point(6, 70);
             this.MatteRadioButton.Name = "MatteRadioButton";
             this.MatteRadioButton.Size = new System.Drawing.Size(70, 25);
             this.MatteRadioButton.TabIndex = 1;
@@ -248,7 +248,7 @@
             // CustomRadioButton
             // 
             this.CustomRadioButton.AutoSize = true;
-            this.CustomRadioButton.Location = new System.Drawing.Point(12, 103);
+            this.CustomRadioButton.Location = new System.Drawing.Point(6, 101);
             this.CustomRadioButton.Name = "CustomRadioButton";
             this.CustomRadioButton.Size = new System.Drawing.Size(87, 25);
             this.CustomRadioButton.TabIndex = 2;
@@ -273,6 +273,7 @@
             this.ExitButton.TabIndex = 18;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // ClearButton
             // 
@@ -311,6 +312,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "AutoCentreForm";
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto Centre";
             this.AdditionalItemsGroupBox.ResumeLayout(false);
             this.AdditionalItemsGroupBox.PerformLayout();

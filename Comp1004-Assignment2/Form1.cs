@@ -16,5 +16,10 @@ namespace Comp1004_Assignment2
         {
             InitializeComponent();
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
