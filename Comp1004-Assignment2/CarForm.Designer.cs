@@ -288,7 +288,7 @@
             // 
             // CarPictureBox
             // 
-            this.CarPictureBox.Location = new System.Drawing.Point(505, 100);
+            this.CarPictureBox.Location = new System.Drawing.Point(505, 128);
             this.CarPictureBox.Name = "CarPictureBox";
             this.CarPictureBox.Size = new System.Drawing.Size(238, 142);
             this.CarPictureBox.TabIndex = 20;
