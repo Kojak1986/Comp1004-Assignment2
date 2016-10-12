@@ -21,5 +21,22 @@ namespace Comp1004_Assignment2
         {
             Application.Exit();
         }
+
+        private void YellowRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            {
+                //Instantiate the next form
+                CarFormYellow yellow = new CarFormYellow();
+
+                //Save a reference to the current for in a preoperty of next form
+                yellow.PreviousForm = this;
+
+                //show next form
+                yellow.Show();
+
+                //Hide this one
+                this.Hide();
+            }
+        }
     }
 }
