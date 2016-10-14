@@ -22,21 +22,49 @@ namespace Comp1004_Assignment2
             Application.Exit();
         }
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            TradeInTextBox.Text = null;
+            AdditionalOptionsTextBox.Text = null;
+            SubTotalTextBox.Text = null;
+            TotalTextBox.Text = null;
+            AmountDueTextBox.Text = null;
+        }
+
+        private void RedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.RedCar;
+
+            if (BasePriceTextBox.Text == "$23,299.59" || BasePriceTextBox.Text == "$23,569.99")
+            {
+                BasePriceTextBox.Text = "$23,000.00";
+            }
+        }
+
         private void YellowRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.YellowCar;
+
+            if (BasePriceTextBox.Text == "$23,000.00" || BasePriceTextBox.Text == "$23,569.99")
             {
-                //Instantiate the next form
-                CarFormYellow yellow = new CarFormYellow();
+                BasePriceTextBox.Text = "$23,299.59";
+            } 
+            
+        }
 
-                //Save a reference to the current for in a preoperty of next form
-                yellow.PreviousForm = this;
+        private void GreenRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.GreenCar;
 
-                //show next form
-                yellow.Show();
-
-                //Hide this one
-                this.Hide();
+            if (BasePriceTextBox.Text == "$23,000.00" || BasePriceTextBox.Text == "$23,299.59")
+            {
+                BasePriceTextBox.Text = "$23,569.99";
             }
+        }
+
+        private void StereoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+                 
         }
     }
 }

@@ -51,14 +51,14 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.CarPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ColourPictureBox = new System.Windows.Forms.PictureBox();
             this.ExteriorFinishGroupBox = new System.Windows.Forms.GroupBox();
             this.GreenRadioButton = new System.Windows.Forms.RadioButton();
             this.YellowRadioButton = new System.Windows.Forms.RadioButton();
             this.RedRadioButton = new System.Windows.Forms.RadioButton();
             this.AdditionalItemsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColourPictureBox)).BeginInit();
             this.ExteriorFinishGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +103,7 @@
             this.StereoCheckBox.TabIndex = 0;
             this.StereoCheckBox.Text = "Stereo System";
             this.StereoCheckBox.UseVisualStyleBackColor = true;
+            this.StereoCheckBox.CheckedChanged += new System.EventHandler(this.StereoCheckBox_CheckedChanged);
             // 
             // BasePriceLabel
             // 
@@ -171,50 +172,66 @@
             // 
             this.BasePriceTextBox.Location = new System.Drawing.Point(170, 60);
             this.BasePriceTextBox.Name = "BasePriceTextBox";
+            this.BasePriceTextBox.ReadOnly = true;
             this.BasePriceTextBox.Size = new System.Drawing.Size(128, 26);
             this.BasePriceTextBox.TabIndex = 9;
+            this.BasePriceTextBox.Text = "$23,000.00";
+            this.BasePriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // SalesTaxTextBox
             // 
             this.SalesTaxTextBox.Location = new System.Drawing.Point(170, 174);
             this.SalesTaxTextBox.Name = "SalesTaxTextBox";
+            this.SalesTaxTextBox.ReadOnly = true;
             this.SalesTaxTextBox.Size = new System.Drawing.Size(128, 26);
             this.SalesTaxTextBox.TabIndex = 10;
+            this.SalesTaxTextBox.Text = "0.13";
+            this.SalesTaxTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TotalTextBox
             // 
             this.TotalTextBox.Location = new System.Drawing.Point(170, 212);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(128, 26);
             this.TotalTextBox.TabIndex = 11;
+            this.TotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TradeInTextBox
             // 
             this.TradeInTextBox.Location = new System.Drawing.Point(170, 250);
             this.TradeInTextBox.Name = "TradeInTextBox";
+            this.TradeInTextBox.ReadOnly = true;
             this.TradeInTextBox.Size = new System.Drawing.Size(128, 26);
             this.TradeInTextBox.TabIndex = 12;
+            this.TradeInTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AmountDueTextBox
             // 
             this.AmountDueTextBox.Location = new System.Drawing.Point(170, 288);
             this.AmountDueTextBox.Name = "AmountDueTextBox";
+            this.AmountDueTextBox.ReadOnly = true;
             this.AmountDueTextBox.Size = new System.Drawing.Size(128, 26);
             this.AmountDueTextBox.TabIndex = 13;
+            this.AmountDueTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // SubTotalTextBox
             // 
             this.SubTotalTextBox.Location = new System.Drawing.Point(170, 136);
             this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.ReadOnly = true;
             this.SubTotalTextBox.Size = new System.Drawing.Size(128, 26);
             this.SubTotalTextBox.TabIndex = 14;
+            this.SubTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AdditionalOptionsTextBox
             // 
             this.AdditionalOptionsTextBox.Location = new System.Drawing.Point(170, 98);
             this.AdditionalOptionsTextBox.Name = "AdditionalOptionsTextBox";
+            this.AdditionalOptionsTextBox.ReadOnly = true;
             this.AdditionalOptionsTextBox.Size = new System.Drawing.Size(128, 26);
             this.AdditionalOptionsTextBox.TabIndex = 15;
+            this.AdditionalOptionsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // CalculateButton
             // 
@@ -243,6 +260,7 @@
             this.ClearButton.TabIndex = 19;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // CarPictureBox
             // 
@@ -252,14 +270,14 @@
             this.CarPictureBox.TabIndex = 20;
             this.CarPictureBox.TabStop = false;
             // 
-            // pictureBox1
+            // ColourPictureBox
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(500, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 240);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
+            this.ColourPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ColourPictureBox.BackgroundImage")));
+            this.ColourPictureBox.Location = new System.Drawing.Point(500, 86);
+            this.ColourPictureBox.Name = "ColourPictureBox";
+            this.ColourPictureBox.Size = new System.Drawing.Size(250, 240);
+            this.ColourPictureBox.TabIndex = 41;
+            this.ColourPictureBox.TabStop = false;
             // 
             // ExteriorFinishGroupBox
             // 
@@ -280,9 +298,9 @@
             this.GreenRadioButton.Name = "GreenRadioButton";
             this.GreenRadioButton.Size = new System.Drawing.Size(64, 23);
             this.GreenRadioButton.TabIndex = 2;
-            this.GreenRadioButton.TabStop = true;
             this.GreenRadioButton.Text = "Green";
             this.GreenRadioButton.UseVisualStyleBackColor = true;
+            this.GreenRadioButton.CheckedChanged += new System.EventHandler(this.GreenRadioButton_CheckedChanged);
             // 
             // YellowRadioButton
             // 
@@ -291,7 +309,6 @@
             this.YellowRadioButton.Name = "YellowRadioButton";
             this.YellowRadioButton.Size = new System.Drawing.Size(68, 23);
             this.YellowRadioButton.TabIndex = 1;
-            this.YellowRadioButton.TabStop = true;
             this.YellowRadioButton.Text = "Yellow";
             this.YellowRadioButton.UseVisualStyleBackColor = true;
             this.YellowRadioButton.CheckedChanged += new System.EventHandler(this.YellowRadioButton_CheckedChanged);
@@ -299,6 +316,7 @@
             // RedRadioButton
             // 
             this.RedRadioButton.AutoSize = true;
+            this.RedRadioButton.Checked = true;
             this.RedRadioButton.Location = new System.Drawing.Point(5, 35);
             this.RedRadioButton.Name = "RedRadioButton";
             this.RedRadioButton.Size = new System.Drawing.Size(52, 23);
@@ -306,6 +324,7 @@
             this.RedRadioButton.TabStop = true;
             this.RedRadioButton.Text = "Red";
             this.RedRadioButton.UseVisualStyleBackColor = true;
+            this.RedRadioButton.CheckedChanged += new System.EventHandler(this.RedRadioButton_CheckedChanged);
             // 
             // AutoCentreForm
             // 
@@ -313,7 +332,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 411);
             this.Controls.Add(this.ExteriorFinishGroupBox);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ColourPictureBox);
             this.Controls.Add(this.CarPictureBox);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.ExitButton);
@@ -342,7 +361,7 @@
             this.AdditionalItemsGroupBox.ResumeLayout(false);
             this.AdditionalItemsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColourPictureBox)).EndInit();
             this.ExteriorFinishGroupBox.ResumeLayout(false);
             this.ExteriorFinishGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -374,7 +393,7 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.PictureBox CarPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ColourPictureBox;
         private System.Windows.Forms.GroupBox ExteriorFinishGroupBox;
         private System.Windows.Forms.RadioButton GreenRadioButton;
         private System.Windows.Forms.RadioButton YellowRadioButton;

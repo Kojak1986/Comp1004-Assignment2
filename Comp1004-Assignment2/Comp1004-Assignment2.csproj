@@ -52,19 +52,10 @@
     <Compile Include="CarForm.Designer.cs">
       <DependentUpon>CarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarFormYellow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CarFormYellow.Designer.cs">
-      <DependentUpon>CarFormYellow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CarFormYellow.resx">
-      <DependentUpon>CarFormYellow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +79,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowCar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColouredCarsYellow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColouredCarsGreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ColouredCarsRed.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
