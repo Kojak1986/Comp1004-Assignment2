@@ -83,6 +83,7 @@
             this.CompNavCheckBox.TabIndex = 2;
             this.CompNavCheckBox.Text = "Computer Navigation";
             this.CompNavCheckBox.UseVisualStyleBackColor = true;
+            this.CompNavCheckBox.CheckedChanged += new System.EventHandler(this.CompNavCheckBox_CheckedChanged);
             // 
             // LeatherCheckBox
             // 
@@ -93,6 +94,7 @@
             this.LeatherCheckBox.TabIndex = 1;
             this.LeatherCheckBox.Text = "Leather Interior";
             this.LeatherCheckBox.UseVisualStyleBackColor = true;
+            this.LeatherCheckBox.CheckedChanged += new System.EventHandler(this.LeatherCheckBox_CheckedChanged);
             // 
             // StereoCheckBox
             // 
@@ -185,7 +187,6 @@
             this.SalesTaxTextBox.ReadOnly = true;
             this.SalesTaxTextBox.Size = new System.Drawing.Size(128, 26);
             this.SalesTaxTextBox.TabIndex = 10;
-            this.SalesTaxTextBox.Text = "0.13";
             this.SalesTaxTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TotalTextBox
@@ -201,7 +202,6 @@
             // 
             this.TradeInTextBox.Location = new System.Drawing.Point(170, 250);
             this.TradeInTextBox.Name = "TradeInTextBox";
-            this.TradeInTextBox.ReadOnly = true;
             this.TradeInTextBox.Size = new System.Drawing.Size(128, 26);
             this.TradeInTextBox.TabIndex = 12;
             this.TradeInTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -222,6 +222,7 @@
             this.SubTotalTextBox.ReadOnly = true;
             this.SubTotalTextBox.Size = new System.Drawing.Size(128, 26);
             this.SubTotalTextBox.TabIndex = 14;
+            this.SubTotalTextBox.Text = "$23,000.00";
             this.SubTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AdditionalOptionsTextBox
@@ -231,6 +232,7 @@
             this.AdditionalOptionsTextBox.ReadOnly = true;
             this.AdditionalOptionsTextBox.Size = new System.Drawing.Size(128, 26);
             this.AdditionalOptionsTextBox.TabIndex = 15;
+            this.AdditionalOptionsTextBox.Text = "$0.00";
             this.AdditionalOptionsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // CalculateButton
@@ -241,6 +243,7 @@
             this.CalculateButton.TabIndex = 16;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ExitButton
             // 
