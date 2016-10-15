@@ -224,6 +224,7 @@
             this.TradeInTextBox.TabIndex = 12;
             this.TradeInTextBox.Text = "0";
             this.TradeInTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TradeInTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TradeInTextBox_MouseClick);
             // 
             // AmountDueTextBox
             // 

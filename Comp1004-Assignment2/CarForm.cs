@@ -275,7 +275,8 @@ namespace Comp1004_Assignment2
 
                     SalesTaxTextBox.Text = tax.ToString("C2");
                     AmountDueTextBox.Text = totalAmount.ToString("C2");
-                    
+                    TotalTextBox.Text = totalSansTrade.ToString("C2");
+
 
 
                 }
@@ -377,6 +378,16 @@ namespace Comp1004_Assignment2
 
             BasePriceTextBox.Font = new Font("Times New Roman", 12, FontStyle.Regular);
             AmountDueTextBox.Font = new Font("Times New Roman", 12, FontStyle.Regular);
+        }
+
+        private void TradeInTextBox_TextChanged(object sender, EventArgs e)
+        {
+            TradeInTextBox.Text = null;
+        }
+
+        private void TradeInTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            TradeInTextBox.Text = "";
         }
     }
 }
