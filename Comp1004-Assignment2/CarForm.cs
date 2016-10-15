@@ -254,7 +254,7 @@ namespace Comp1004_Assignment2
 
             try
             {
-                if (TradeInTextBox.Text == "")
+                if (TradeInTextBox.Text == "0" || TradeInTextBox.Text == "")
                 {
                     totalAmount = subTotal * 1.13;
                     tax = subTotal * 0.13;
