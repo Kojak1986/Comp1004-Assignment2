@@ -18,11 +18,13 @@ namespace Comp1004_Assignment2
             InitializeComponent();
         }
 
+        //Exit buttom ends app
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        // Clear button resets the form except for car colour
         private void ClearButton_Click(object sender, EventArgs e)
         {
             TradeInTextBox.Text = null;
@@ -30,22 +32,17 @@ namespace Comp1004_Assignment2
             TotalTextBox.Text = null;
             AmountDueTextBox.Text = null;
             SalesTaxTextBox.Text = null;
-
-            if (StereoCheckBox.Checked == true)
-            {
-                StereoCheckBox.Checked = false;
-            }
-            if (LeatherCheckBox.Checked == true)
-            {
-                LeatherCheckBox.Checked = false;
-            }
-            if (CompNavCheckBox.Checked == true)
-            { 
+            StereoCheckBox.Checked = false;
+            LeatherCheckBox.Checked = false;
             CompNavCheckBox.Checked = false;
-        }
-            
+            BasePriceTextBox.BackColor = Color.White;
+            AmountDueTextBox.BackColor = Color.White;
+
+
+
         }
 
+        //When red is checked, picture is the red car and the appropriate cost is added to the base price
         private void RedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.RedCar;
@@ -62,6 +59,7 @@ namespace Comp1004_Assignment2
             SubTotalTextBox.Text = subTotal.ToString("C2");
         }
 
+        //When yellow is checked, picture is the yellow car and the appropriate cost is added to the base price
         private void YellowRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.YellowCar;
@@ -78,6 +76,7 @@ namespace Comp1004_Assignment2
 
         }
 
+        //When green is checked, picture is the green car and the appropriate cost is added to the base price
         private void GreenRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             ColourPictureBox.Image = Comp1004_Assignment2.Properties.Resources.GreenCar;
@@ -93,6 +92,7 @@ namespace Comp1004_Assignment2
             SubTotalTextBox.Text = subTotal.ToString("C2");
         }
 
+        //Stereo check adds cost to the subtotal and also to the additional text box area
         private void StereoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             double addop;
@@ -101,7 +101,7 @@ namespace Comp1004_Assignment2
             
 
 
-
+            // if checked the value is injected into the additional items text box
             if (StereoCheckBox.Checked == true)
             {
                 if (AdditionalOptionsTextBox.Text == "")
@@ -125,6 +125,7 @@ namespace Comp1004_Assignment2
 
             else
             {
+                //if stereo is unchecked the value of the item is deleted from the additional items text box
                 addop = Convert.ToDouble((AdditionalOptionsTextBox.Text as string).TrimStart('$'));
 
                 addop = addop - stereo;
@@ -133,6 +134,8 @@ namespace Comp1004_Assignment2
                 
             }
 
+            
+            // subtotal is calculated and injected into the subtotal textbox
             double basePrice = Convert.ToDouble((BasePriceTextBox.Text as string).TrimStart('$'));
             double addOptText = Convert.ToDouble((AdditionalOptionsTextBox.Text as string).TrimStart('$'));
             double subTotal = basePrice + addOptText;
@@ -143,15 +146,16 @@ namespace Comp1004_Assignment2
 
         }
 
+        //Leather check adds cost to the subtotal and also to the additional text box area
         private void LeatherCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
             double addop;
             double addopLeather;
             double leather = 599.99;
-            
 
 
+            // if checked the value is injected into the additional items text box
             if (LeatherCheckBox.Checked == true)
             {
                 if(AdditionalOptionsTextBox.Text == "")
@@ -181,6 +185,7 @@ namespace Comp1004_Assignment2
                 AdditionalOptionsTextBox.Text = addop.ToString("C2");
             }
 
+            // subtotal is calculated and injected into the subtotal textbox
             double basePrice = Convert.ToDouble((BasePriceTextBox.Text as string).TrimStart('$'));
             double addOptText = Convert.ToDouble((AdditionalOptionsTextBox.Text as string).TrimStart('$'));
             double subTotal = basePrice + addOptText;
@@ -188,13 +193,14 @@ namespace Comp1004_Assignment2
             SubTotalTextBox.Text = subTotal.ToString("C2");
         }
 
+        //Computer Navigation check adds cost to the subtotal and also to the additional text box area
         private void CompNavCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             double addop;
             double addopNav;
             double nav = 759.99;
-          
 
+            // if checked the value is injected into the additional items text box
             if (CompNavCheckBox.Checked == true)
             {
                 if (AdditionalOptionsTextBox.Text == "")
@@ -226,6 +232,7 @@ namespace Comp1004_Assignment2
 
             }
 
+            // subtotal is calculated and injected into the subtotal textbox
             double basePrice = Convert.ToDouble((BasePriceTextBox.Text as string).TrimStart('$'));
             double addOptText = Convert.ToDouble((AdditionalOptionsTextBox.Text as string).TrimStart('$'));
             double subTotal = basePrice + addOptText;
@@ -234,6 +241,8 @@ namespace Comp1004_Assignment2
 
         }
 
+        //Calculate button does all the necessary calculations and returns the total amounts
+        //Uses a try catch to make sure the trade in amount is properly entered number
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             
@@ -279,6 +288,95 @@ namespace Comp1004_Assignment2
 
 
             
+        }
+
+        //Exit menue item exits app
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //calculate menu item performs calculate button click
+        private void CalculateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+              CalculateButton.PerformClick();
+        }
+
+        //clear menu item performs clear button click
+        private void ClearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearButton.PerformClick();
+        }
+
+        //about menu item describes the app
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This application is for customizing your car and calculating your total. Choose whichever options you would like! We'll even discount your trade in value!", "Welcome!");
+        }
+
+        //colour change of baseprice and amount due boxes
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceTextBox.BackColor = Color.Red;
+            AmountDueTextBox.BackColor = Color.Red;
+        }
+
+        //colour change of baseprice and amount due boxes
+        private void yellowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceTextBox.BackColor = Color.Yellow;
+            AmountDueTextBox.BackColor = Color.Yellow;
+        }
+
+        //colour change of baseprice and amount due boxes
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceTextBox.BackColor = Color.Green;
+            AmountDueTextBox.BackColor = Color.Green;
+        }
+
+
+
+
+        //font change of baseprice and amount due boxes and labels
+        private void lucidaSansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceLabel.Font = new Font("Lucida Sans", 12, FontStyle.Regular);
+            AmountDueLabel.Font = new Font("Lucida Sans", 12, FontStyle.Regular);
+
+            BasePriceTextBox.Font = new Font("Lucida Sans", 12, FontStyle.Regular);
+            AmountDueTextBox.Font = new Font("Lucida Sans", 12, FontStyle.Regular);
+
+        }
+        //font change of baseprice and amount due boxes and labels
+
+        private void comicSansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceLabel.Font = new Font("Comic Sans", 12, FontStyle.Regular);
+            AmountDueLabel.Font = new Font("Comic Sans", 12, FontStyle.Regular);
+
+            BasePriceTextBox.Font = new Font("Comic Sans", 12, FontStyle.Regular);
+            AmountDueTextBox.Font = new Font("Comic Sans", 12, FontStyle.Regular);
+        }
+
+        //font change of baseprice and amount due boxes and labels
+        private void coriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceLabel.Font = new Font("Courier New", 12, FontStyle.Regular);
+            AmountDueLabel.Font = new Font("Courier New", 12, FontStyle.Regular);
+
+            BasePriceTextBox.Font = new Font("Courier New", 12, FontStyle.Regular);
+            AmountDueTextBox.Font = new Font("Courier New", 12, FontStyle.Regular);
+        }
+
+        //font change of baseprice and amount due boxes and labels
+        private void resetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasePriceLabel.Font = new Font("Times New Roman", 12, FontStyle.Regular);
+            AmountDueLabel.Font = new Font("Times New Roman", 12, FontStyle.Regular);
+
+            BasePriceTextBox.Font = new Font("Times New Roman", 12, FontStyle.Regular);
+            AmountDueTextBox.Font = new Font("Times New Roman", 12, FontStyle.Regular);
         }
     }
 }
