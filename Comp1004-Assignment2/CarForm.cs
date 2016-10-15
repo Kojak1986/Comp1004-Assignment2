@@ -27,7 +27,7 @@ namespace Comp1004_Assignment2
         // Clear button resets the form except for car colour
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            TradeInTextBox.Text = null;
+            TradeInTextBox.Text = "0";
             SubTotalTextBox.Text = BasePriceTextBox.Text;
             TotalTextBox.Text = null;
             AmountDueTextBox.Text = null;
