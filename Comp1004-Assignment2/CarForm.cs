@@ -223,7 +223,7 @@ namespace Comp1004_Assignment2
             else
             {
                 addop = Convert.ToDouble((AdditionalOptionsTextBox.Text as string).TrimStart('$'));
-               
+
                 addop = addop - nav;
                
 
